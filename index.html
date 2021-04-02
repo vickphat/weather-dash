@@ -25,32 +25,69 @@
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Enter A City Name"
                             aria-label="Enter A City Name">
-                        <button class="btn btn-primary" type="button" id="search-button">Search</button>
-                    </div>
-                </div>
-                <button type="button" class="btn btn-outline-danger" id="clear-history">CLEAR HISTORY</button>
-                <form id="history"></form>
-            </div>
-
-            <div class="col-lg-9">
-                <div class="row">
-                    <div id="today-weather">
-                        <div class="card-body">
-                            <h3 id="city-name"></h3>
-                            <img id="current-pic" alt="">
-                            <p id="temperature"></p>
-                            <p id="UV-index"></p>
-                            <p id="humidity"></p>
-                            <p id="wind-speed"></p>
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="button" id="search-button">Search</button>
                         </div>
                     </div>
                 </div>
-                <div class="row" id="fiveday">
+                <button type="button" class="btn btn-outline-danger" id="clear-history">CLEAR HISTORY</button>
+                <ul class="list-group">
+
+                </ul>
+            </div>
+
+            <div class="col-lg-9">
+                <div class="row mr-0">
+                    <div class="col-lg-11 card m-3" id="current-weather">
+                        <h3 id="city-name"></h3>
+                        <img id="current-pic" alt="">
+                        <p class="current" id="temperature">Temperature:</p>
+                        <p class="current" id="humidity">Humidity:</p>
+                        <p class="current" id="wind-speed">Wind-Speed:</p>
+                        <p class="current" id="UV-index">UV-Index:</p>
+                    </div>
+                </div>
+                <div class="row col-sm-12" id="fiveday">
                     <div>
                         <h3>5-Day Forecast</h3>
                     </div>
                 </div>
-                
+                <div class="row">
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
+                        <p id="fDate0"></p>
+                        <p id="fImg0"></p>
+                        <p>Temp:<span id="fTemp0"></span></p>
+                        <p>Humidity:<span id="fHumidity0"></span></p>
+                    </div>
+
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
+                        <p id="fDate1"></p>
+                        <p id="fImg1"></p>
+                        <p>Temp:<span id="fTemp1"></span></p>
+                        <p>Humidity:<span id="fHumidity1"></span></p>
+                    </div>
+
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
+                        <p id="fDate2"></p>
+                        <p id="fImg2"></p>
+                        <p>Temp:<span id="fTemp2"></span></p>
+                        <p>Humidity:<span id="fHumidity2"></span></p>
+                    </div>
+
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
+                        <p id="fDate3"></p>
+                        <p id="fImg3"></p>
+                        <p>Temp:<span id="fTemp3"></span></p>
+                        <p>Humidity:<span id="fHumidity3"></span></p>
+                    </div>
+
+                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
+                        <p id="fDate4"></p>
+                        <p id="fImg4"></p>
+                        <p>Temp:<span id="fTemp4"></span></p>
+                        <p>Humidity:<span id="fHumidity4"></span></p>
+                    </div>
+                </div>
             </div>
 
         </div>

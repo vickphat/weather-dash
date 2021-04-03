@@ -23,7 +23,7 @@
                 <h5 class="mt-1">Search for a City:</h5>
                 <div class="input-group mb-3">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Enter A City Name"
+                        <input id="enter-city" type="text" class="form-control"  placeholder="Enter A City Name"
                             aria-label="Enter A City Name">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button" id="search-button">Search</button>
@@ -40,59 +40,25 @@
                 <div class="row mr-0">
                     <div class="col-lg-11 card m-3" id="current-weather">
                         <h3 id="city-name"></h3>
-                        <img id="current-pic" alt="">
-                        <p class="current" id="temperature">Temperature:</p>
-                        <p class="current" id="humidity">Humidity:</p>
-                        <p class="current" id="wind-speed">Wind-Speed:</p>
-                        <p class="current" id="UV-index">UV-Index:</p>
+                        <img id="current-picture" alt="">
+                        <p>Temperature: <span id="temperature"></span></p>
+                        <p>Humidity: <span id="humidity"></span></p>
+                        <p>Wind-Speed: <span id="wind-speed"></span></p>
+                        <p>UV-Index: <span id="UV-index"></span></p>
                     </div>
                 </div>
                 <div class="row col-sm-12" id="fiveday">
                     <div>
                         <h3>5-Day Forecast</h3>
                     </div>
+
                 </div>
-                <div class="row">
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
-                        <p id="fDate0"></p>
-                        <p id="fImg0"></p>
-                        <p>Temp:<span id="fTemp0"></span></p>
-                        <p>Humidity:<span id="fHumidity0"></span></p>
-                    </div>
 
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
-                        <p id="fDate1"></p>
-                        <p id="fImg1"></p>
-                        <p>Temp:<span id="fTemp1"></span></p>
-                        <p>Humidity:<span id="fHumidity1"></span></p>
-                    </div>
-
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
-                        <p id="fDate2"></p>
-                        <p id="fImg2"></p>
-                        <p>Temp:<span id="fTemp2"></span></p>
-                        <p>Humidity:<span id="fHumidity2"></span></p>
-                    </div>
-
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
-                        <p id="fDate3"></p>
-                        <p id="fImg3"></p>
-                        <p>Temp:<span id="fTemp3"></span></p>
-                        <p>Humidity:<span id="fHumidity3"></span></p>
-                    </div>
-
-                    <div class="col-md-2 forecast bg-primary text-white m-2 rounded">
-                        <p id="fDate4"></p>
-                        <p id="fImg4"></p>
-                        <p>Temp:<span id="fTemp4"></span></p>
-                        <p>Humidity:<span id="fHumidity4"></span></p>
-                    </div>
-                </div>
             </div>
-
         </div>
     </div>
-
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="./asset/js/script.js"></script>
 </body>
 
 </html>

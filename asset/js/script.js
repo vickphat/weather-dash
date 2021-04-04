@@ -102,4 +102,31 @@ function clearHistory(event){
     document.location.reload();
 }
 
+// When city is clicked in history, returns that city's weather
+function previousSearch(event){
+    var liEl=event.target;
+    if (event.target.matches("li")){
+        city=liEl.textContent.trim();
+        currentWeather(city);
+    }
+
+}
+$(document).on("click",previousSearch);
+
+// Relates with previousSearch function
+function loadlastCity(){
+    $("ul").empty();
+    var searchedCity = JSON.parse(localStorage.getItem("cityname"));
+    if(searchedCity!==null){
+        searchedCity=JSON.parse(localStorage.getItem("cityname"));
+        for(i=0; i<searchedCity.length;i++){
+            addToList(searchedCity[i]);
+        }
+        city=searchedCity[i-1];
+        currentWeather(city);
+    }
+
+}
+$(window).on("load",loadlastCity);
+
 

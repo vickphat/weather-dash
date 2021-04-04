@@ -48,13 +48,13 @@ function currentWeather(city) {
                     searchedCity = [];
                     searchedCity.push(city.toUpperCase());
                     localStorage.setItem("cityname", JSON.stringify(searchedCity));
-                    addToList(city);
+                    addToHistory(city);
                 }
                 else {
                     if(find(city)>0) {
                         searchedCity.push(city.toUpperCase());
                         localStorage.setItem("cityname", JSON.stringify(searchedCity));
-                        addToList(city)
+                        addToHistory(city)
                     }
                 }
             }
@@ -87,10 +87,10 @@ function find(city){
 }
 
 // Add searches to history
-function addToList(c){
-    var listEl= $("<li>"+c.toUpperCase()+"</li>");
+function addToHistory(history){
+    var listEl= $("<li>"+history.toUpperCase()+"</li>");
     $(listEl).attr("class","list-group-item");
-    $(listEl).attr("data-value",c.toUpperCase());
+    $(listEl).attr("data-value",history.toUpperCase());
     $(".list-group").append(listEl);
 }
 
@@ -120,7 +120,7 @@ function loadlastCity(){
     if(searchedCity!==null){
         searchedCity=JSON.parse(localStorage.getItem("cityname"));
         for(i=0; i<searchedCity.length;i++){
-            addToList(searchedCity[i]);
+            addToHistory(searchedCity[i]);
         }
         city=searchedCity[i-1];
         currentWeather(city);

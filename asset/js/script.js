@@ -93,3 +93,13 @@ function addToList(c){
     $(listEl).attr("data-value",c.toUpperCase());
     $(".list-group").append(listEl);
 }
+
+//Clears search history 
+function clearHistory(event){
+    event.preventDefault();
+    searchedCity=[];
+    localStorage.removeItem("cityname");
+    document.location.reload();
+}
+
+

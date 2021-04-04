@@ -13,15 +13,6 @@ var weatherPicture
 var iconURL
 var searchedCity = [];
 
-function find(city){
-    for (var i=0; i < searchedCity.length; i++){
-        if(city.toUpperCase()===searchedCity[i]){
-            return -1;
-        }
-    }
-    return 1;
-}
-
 searchButton.click(weather);
 clearButton.click(clearHistory);
 
@@ -32,7 +23,6 @@ function weather(event) {
         currentWeather(city);
     }
 }
-
 
 function currentWeather(city) {
     console.log(city)
@@ -87,6 +77,15 @@ function UVIndex(latitude, longitude) {
     })
 }
 
+function find(city){
+    for (var i=0; i < searchedCity.length; i++){
+        if(city.toUpperCase()===searchedCity[i]){
+            return -1;
+        }
+    }
+    return 1;
+}
+
 // Add searches to history
 function addToList(c){
     var listEl= $("<li>"+c.toUpperCase()+"</li>");
@@ -94,4 +93,3 @@ function addToList(c){
     $(listEl).attr("data-value",c.toUpperCase());
     $(".list-group").append(listEl);
 }
-

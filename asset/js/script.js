@@ -1,5 +1,5 @@
 var searchButton = $("#search-button");
-var clearHistory = $("#clear-history");
+var clearButton = $("#clear-history");
 var cityName = $("#city-name");
 var currentPicture = $("#current-picture");
 var currentTemp = $("#temperature");
@@ -13,8 +13,17 @@ var weatherPicture
 var iconURL
 var searchedCity = [];
 
+function find(city){
+    for (var i=0; i < searchedCity.length; i++){
+        if(city.toUpperCase()===searchedCity[i]){
+            return -1;
+        }
+    }
+    return 1;
+}
 
 searchButton.click(weather);
+clearButton.click(clearHistory);
 
 function weather(event) {
     event.preventDefault();
@@ -23,6 +32,7 @@ function weather(event) {
         currentWeather(city);
     }
 }
+
 
 function currentWeather(city) {
     console.log(city)
@@ -36,11 +46,29 @@ function currentWeather(city) {
             date = new Date(data.dt * 1000).toLocaleDateString();
             weatherPicture = data.weather[0].icon;
             iconURL = "https://openweathermap.org/img/wn/" + weatherPicture + "@2x.png";
-            cityName.append(data.name + "(" + date + ")" + "<img src=" + iconURL + ">");
-            currentTemp.append(data.main.temp + "°F");
-            currentHumidity.append(data.main.humidity + "%");
-            currentWindSpeed.append(data.wind.speed + "MPH");
+            cityName.html(data.name + "(" + date + ")" + "<img src=" + iconURL + ">");
+            currentTemp.html(data.main.temp + "°F");
+            currentHumidity.html(data.main.humidity + "%");
+            currentWindSpeed.html(data.wind.speed + "MPH");
             UVIndex(data.coord.lon, data.coord.lat);
+            if(data.cod == 200) {
+                searchedCity = JSON.parse(localStorage.getItem("cityname"));
+                console.log(searchedCity);
+                if(searchedCity==null) {
+                    searchedCity = [];
+                    searchedCity.push(city.toUpperCase());
+                    localStorage.setItem("cityname", JSON.stringify(searchedCity));
+                    addToList(city);
+                }
+                else {
+                    if(find(city)>0) {
+                        searchedCity.push(city.toUpperCase());
+                        localStorage.setItem("cityname", JSON.stringify(searchedCity));
+                        addToList(city)
+                    }
+                }
+            }
+
         })
     }) 
 }
@@ -54,8 +82,16 @@ function UVIndex(latitude, longitude) {
         response.json()
         .then(function (data) {
             console.log(data)
-            currentUV.append(data.value)
+            currentUV.html(data.value)
         })
     })
+}
+
+// Add searches to history
+function addToList(c){
+    var listEl= $("<li>"+c.toUpperCase()+"</li>");
+    $(listEl).attr("class","list-group-item");
+    $(listEl).attr("data-value",c.toUpperCase());
+    $(".list-group").append(listEl);
 }
 

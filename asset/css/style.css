@@ -2,7 +2,3 @@
 cursor: pointer;
 }
 
-.list-group-item :hover {
-background-color: red;
-color: white;
-}

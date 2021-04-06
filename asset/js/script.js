@@ -125,10 +125,23 @@ function UVIndex(latitude, longitude) {
     fetch(uvURL)
         .then(function (response) {
             response.json()
-                .then(function (data) {
-                    console.log(data);
-                    currentUV.html(data.value);    
-                })
+                .then(function (response) {
+                    console.log(response);
+                    currentUV.html(response.value);
+
+                    var badgeColor = document.querySelector("#UV-index")
+                    // Sets UV background color according to UV-Index
+                if (response.value < 3 ) {
+                    badgeColor.classList.add("badge", "bg-success", "text-white");
+                }
+                else if (response.value > 3 && response.value < 10) {
+                    badgeColor.classList.add("badge", "bg-warning", "text-white");
+                }
+                else {
+                    badgeColor.classList.add("badge", "bg-danger", "text-white");
+                }
+
+                })       
         })
 }
 
@@ -157,3 +170,5 @@ function fiveDayForcast(id) {
                 })
         })
 }
+
+

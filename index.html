@@ -16,10 +16,10 @@
     <header class="container-fluid bg-dark text-white">
         <h1>Weather Dashboard</h1>
     </header>
-
+    <!-- Form for text input, search button and clear history button -->
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-4 col-sm-6">
                 <h5 class="mt-1">Search for a City:</h5>
                 <div class="input-group mb-3">
                     <div class="input-group mb-3">
@@ -44,49 +44,50 @@
                         <p>Temperature: <span id="temperature"></span></p>
                         <p>Humidity: <span id="humidity"></span></p>
                         <p>Wind-Speed: <span id="wind-speed"></span></p>
-                        <p>UV-Index: <span id="UV-index"></span></p>
+                        <p>UV-Index: <span class="badge bg-success" id="UV-index"></span></p>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <div>
-                        <h3>5-Day Forecast</h3>
-                    </div>
-                    <div class="row text-light">
-                        <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
-                            <p id="fiveDate0"></p>
-                            <p id="fivePicture0"></p>
-                            <p>Temp: <span id="fiveTemp0"></span></p>
-                            <p>Humidity: <span id="fiveHumidity0"></span></p>
-                        </div>
-                        <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
-                            <p id="fiveDate1"></p>
-                            <p id="fivePicture1"></p>
-                            <p>Temp: <span id="fiveTemp1"></span></p>
-                            <p>Humidity: <span id="fiveHumidity1"></span></p>
-                        </div>
-                        <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
-                            <p id="fiveDate2"></p>
-                            <p id="fivePicture2"></p>
-                            <p>Temp: <span id="fiveTemp2"></span></p>
-                            <p>Humidity: <span id="fiveHumidity2"></span></p>
-                        </div>
-                        <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
-                            <p id="fiveDate3"></p>
-                            <p id="fivePicture3"></p>
-                            <p>Temp: <span id="fiveTemp3"></span></p>
-                            <p>Humidity: <span id="fiveHumidity3"></span></p>
-                        </div>
-                        <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
-                            <p id="fiveDate4"></p>
-                            <p id="fivePicture4"></p>
-                            <p>Temp: <span id="fiveTemp4"></span></p>
-                            <p>Humidity: <span id="fiveHumidity4"></span></p>
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
+            <div class="container-fluid col-lg-6 col-md-8 col-sm-8">
+                <div>
+                    <h3>5-Day Forecast</h3>
+                </div>
+                <div class="row text-light">
+                    <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
+                        <p id="fiveDate0"></p>
+                        <p id="fivePicture0"></p>
+                        <p>Temp: <span id="fiveTemp0"></span></p>
+                        <p>Humidity: <span id="fiveHumidity0"></span></p>
+                    </div>
+                    <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
+                        <p id="fiveDate1"></p>
+                        <p id="fivePicture1"></p>
+                        <p>Temp: <span id="fiveTemp1"></span></p>
+                        <p>Humidity: <span id="fiveHumidity1"></span></p>
+                    </div>
+                    <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
+                        <p id="fiveDate2"></p>
+                        <p id="fivePicture2"></p>
+                        <p>Temp: <span id="fiveTemp2"></span></p>
+                        <p>Humidity: <span id="fiveHumidity2"></span></p>
+                    </div>
+                    <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
+                        <p id="fiveDate3"></p>
+                        <p id="fivePicture3"></p>
+                        <p>Temp: <span id="fiveTemp3"></span></p>
+                        <p>Humidity: <span id="fiveHumidity3"></span></p>
+                    </div>
+                    <div class="col-lg-2 bg-primary forecast text-white p-2 m-2 rounded">
+                        <p id="fiveDate4"></p>
+                        <p id="fivePicture4"></p>
+                        <p>Temp: <span id="fiveTemp4"></span></p>
+                        <p>Humidity: <span id="fiveHumidity4"></span></p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
         <script src="https://code.jquery.com/jquery.js"></script>
         <script src="./asset/js/script.js"></script>

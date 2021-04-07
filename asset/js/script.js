@@ -140,13 +140,19 @@ function UVIndex(latitude, longitude) {
                     var badgeColor = document.querySelector("#UV-index")
                     // Sets UV background color according to UV-Index for favorable, moderate, or severe conditions
                 if (response.value < 2 ) {
-                    badgeColor.classList.add("badge", "bg-success", "text-white");
+                    badgeColor.classList.add("badge", "bg-success");
+                    badgeColor.classList.remove("badge", "bg-warning");
+                    badgeColor.classList.remove("badge", "bg-danger");
                 }
                 else if (response.value > 2 && response.value < 5) {
-                    badgeColor.classList.add("badge", "bg-warning", "text-white");
+                    badgeColor.classList.add("badge", "bg-warning");
+                    badgeColor.classList.remove("badge", "bg-danger");
+                    badgeColor.classList.remove("badge", "bg-success");
                 }
                 else {
-                    badgeColor.classList.add("badge", "bg-danger", "text-white");
+                    badgeColor.classList.add("badge", "bg-danger");
+                    badgeColor.classList.remove("badge", "bg-success");
+                    badgeColor.classList.remove("badge", "bg-warning");
                 }
 
                 })       

@@ -7,6 +7,8 @@ var currentHumidity = $("#humidity");
 var currentWindSpeed = $("#wind-speed");
 var currentUV = $("#UV-index");
 var enterCity = $("#enter-city");
+var oneDay = document.querySelector(".one-day");
+var fiveDay = document.querySelector(".five-day");
 var city = "";
 var searchedCity = [];
 
@@ -22,6 +24,8 @@ function weather(event) {
     if (enterCity.val().trim() !== "") {
         city = enterCity.val().trim();
         currentWeather(city);
+        oneDay.classList.remove("d-none");
+        fiveDay.classList.remove("d-none");
     }
 }
 
@@ -57,6 +61,8 @@ function previousSearch(event) {
     if (event.target.matches("li")) {
         city = liEl.textContent.trim();
         currentWeather(city);
+        oneDay.classList.remove("d-none");
+        fiveDay.classList.remove("d-none");
     }
 }
 $(document).on("click", previousSearch);
@@ -72,6 +78,8 @@ function lastSearch() {
         }
         city = searchedCity[i - 1];
         currentWeather(city);
+        oneDay.classList.remove("d-none");
+        fiveDay.classList.remove("d-none");
     }
 }
 $(window).on("load", lastSearch);
@@ -130,7 +138,7 @@ function UVIndex(latitude, longitude) {
                     currentUV.html(response.value);
 
                     var badgeColor = document.querySelector("#UV-index")
-                    // Sets UV background color according to UV-Index
+                    // Sets UV background color according to UV-Index for favorable, moderate, or severe conditions
                 if (response.value < 3 ) {
                     badgeColor.classList.add("badge", "bg-success", "text-white");
                 }

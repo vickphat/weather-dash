@@ -139,10 +139,10 @@ function UVIndex(latitude, longitude) {
 
                     var badgeColor = document.querySelector("#UV-index")
                     // Sets UV background color according to UV-Index for favorable, moderate, or severe conditions
-                if (response.value < 3 ) {
+                if (response.value < 2 ) {
                     badgeColor.classList.add("badge", "bg-success", "text-white");
                 }
-                else if (response.value > 3 && response.value < 10) {
+                else if (response.value > 2 && response.value < 5) {
                     badgeColor.classList.add("badge", "bg-warning", "text-white");
                 }
                 else {

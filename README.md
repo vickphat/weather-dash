@@ -41,6 +41,12 @@ If the user wants to start all over again, they can click on the clear history b
 
 <img src= "https://github.com/vickphat/weather-dash/blob/master/asset/images/weather1.JPG">
 
+<h1>Technology Used</h1>
+
+   * JavaScript
+   * HTML
+   * CSS 
+
 <h1>Link to deployed application:</h1>
 
 https://vickphat.github.io/weather-dash/
